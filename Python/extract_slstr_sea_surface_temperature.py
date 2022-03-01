@@ -17,7 +17,7 @@ import snapista
 
 gpt_path = pathlib.Path('~/.esa-snap/bin/gpt').expanduser()
 
-data = (pathlib.Path('..') / 'Data').absolute()
+data = (pathlib.Path() / 'Data').absolute()
 slstr = data / 'raw' / 'SLSTR'
 products = [slstr / f for f in os.listdir(slstr) if 'S3' in f]
 products.sort()
@@ -55,14 +55,16 @@ graph.add_node(reproject_utm)
 gpt.run(
     graph,
     master,
-    output_folder='../Data/export',
+    output_folder='Data/export',
     format_='GeoTIFF',
     suffix='_sst',
+    prefix='S3_',
     date_time_only=True,
+    suppress_stderr=False,
 )
 
 # redefine the master: set it to the processed version
-master = data / 'export' / '2020-09-26T10-35-47_sst.tif'
+master = data / 'export' / 'S3_2020-09-26T10-35-47_sst.tif'
 
 # redefine the reproject operator: collocate everything with the master
 reproject_utm = snapista.operators.Reproject()
@@ -80,8 +82,10 @@ graph.add_node(reproject_utm)
 gpt.run(
     graph,
     products,
-    output_folder='../Data/export',
+    output_folder='Data/export',
     format_='GeoTIFF',
     suffix='_sst',
+    prefix='S3_',
     date_time_only=True,
+    suppress_stderr=False,
 )

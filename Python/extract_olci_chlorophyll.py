@@ -12,12 +12,11 @@ The snapista I use here is my own version, you can find it at https://github.com
 import os
 import pathlib
 
-# snapista package is assumed to be inside the Scripts folder, see README
 import snapista
 
 gpt_path = pathlib.Path('~/.esa-snap/bin/gpt').expanduser()
 
-data = (pathlib.Path('..') / 'Data').absolute()
+data = (pathlib.Path() / 'Data').absolute()
 olci = data / 'raw' / 'OLCI'
 products = [olci / f for f in os.listdir(olci) if 'S3' in f]
 products.sort()
@@ -55,7 +54,7 @@ graph.add_node(reproject)
 gpt.run(
     graph,
     master,
-    output_folder='../Data/export',
+    output_folder='Data/export',
     format_='GeoTIFF',
     suffix='_chl',
     date_time_only=True,
@@ -80,8 +79,10 @@ graph.add_node(reproject)
 gpt.run(
     graph,
     products,
-    output_folder='../Data/export',
+    output_folder='Data/export',
     format_='GeoTIFF',
     suffix='_chl',
+    prefix='S3_',
     date_time_only=True,
+    suppress_stderr=False,
 )

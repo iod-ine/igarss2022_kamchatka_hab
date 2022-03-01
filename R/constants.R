@@ -1,16 +1,4 @@
-# Load the data and manually define the constants.
-
-library(sf)
-library(tidyverse)
-
-vectors <- file.path("..", "Data", "vectors")
-
-russia <- geodata::gadm('Russia', path = vectors, level = 2)
-russia <- sf::st_as_sf(russia)
-
-kamchatka <- filter(russia, NAME_1 == "Kamchatka")
-kamchatka <- st_transform(kamchatka, 32657)
-
+kamchatka <- tar_read(kamchatka_sfc)
 elizovskiy_rayon <- filter(kamchatka, NAME_2 == "Elizovskiy rayon")
 
 # Constants for the ROI map

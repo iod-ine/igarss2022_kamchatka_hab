@@ -1,0 +1,16 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+_targets/
+_run.R
+snapista
+*.shp
+*.dbf
+*.prj
+*.shx
+*.rds
+Data/export
+Data/proc
+

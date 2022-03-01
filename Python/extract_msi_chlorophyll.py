@@ -1,7 +1,7 @@
 """ Batch pre-process C2RCC corrected MSI data using SNAP GPT.
 
 This is the second step in processing Sentinel-2 data.
-The first one is: 02_a_atmospherically_correct_msil1c.py
+The first one is: atmospherically_correct_msil1c.py
 
 The processing graph is:
     - extract the chlorophyll concentration bands;
@@ -15,12 +15,11 @@ The snapista I use here is my own version, you can find it at https://github.com
 import os
 import pathlib
 
-# snapista package is assumed to be inside the Scripts folder, see README
 import snapista
 
 gpt_path = pathlib.Path('~/.esa-snap/bin/gpt').expanduser()
 
-data = (pathlib.Path('..') / 'Data').absolute()
+data = (pathlib.Path() / 'Data').absolute()
 c2rcc = data / 'proc' / 'c2rcc'
 products = [c2rcc / f for f in os.listdir(c2rcc) if '_c2rcc.dim' in f]
 products.sort()
@@ -51,7 +50,7 @@ graph.add_node(subset)
 gpt.run(
     graph,
     master,
-    output_folder='../Data/export',
+    output_folder='Data/export',
     format_='GeoTIFF',
     suffix='_chl',
 )
@@ -69,7 +68,8 @@ graph.add_node(reproject)
 gpt.run(
     graph,
     products,
-    output_folder='../Data/export',
+    output_folder='Data/export',
     format_='GeoTIFF',
     suffix='_chl',
+    suppress_stderr=False,
 )
