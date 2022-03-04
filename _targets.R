@@ -1,8 +1,19 @@
 library(targets)
+library(tarchetypes)
 
 source(here::here("R", "functions.R"))
+source(here::here("R", "maps.R"))
+source(here::here("R", "anomalies.R"))
 
-tar_option_set(packages = c("dplyr", "sf", "git2r", "reticulate"))
+tar_option_set(packages = c(
+  "tidyverse",
+  "sf",
+  "git2r",
+  "reticulate",
+  "tmap",
+  "lubridate",
+  "terra"
+))
 
 list(
   # Raw data is not a target because it would slow down pipeline inspection
@@ -46,6 +57,12 @@ list(
   tar_target(
     slstr_sst,
     extract_slstr_sst(snapista, py_sst_slstr),
+    format = "file"
+  ),
+  tar_target(roi_map, make_roi_map(kamchatka_shp)),
+  tar_target(
+    chl_anomaly_series,
+    generate_chl_anomaly_time_series(olci_chl, kamchatka_shp),
     format = "file"
   )
 )

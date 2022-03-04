@@ -1,6 +1,3 @@
-kamchatka <- tar_read(kamchatka_sfc)
-elizovskiy_rayon <- filter(kamchatka, NAME_2 == "Elizovskiy rayon")
-
 # Constants for the ROI map
 avacha_bay <- st_polygon(
   list(

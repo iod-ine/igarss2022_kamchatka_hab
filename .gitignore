@@ -13,4 +13,6 @@ snapista
 *.rds
 Data/export
 Data/proc
+Data/anomaly/*.tif
+Maps
 
