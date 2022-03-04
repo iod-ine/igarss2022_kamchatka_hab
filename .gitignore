@@ -15,4 +15,7 @@ Data/export
 Data/proc
 Data/anomaly/*.tif
 Maps
+Rnw/figure
+*.tex
+*.pdf
 

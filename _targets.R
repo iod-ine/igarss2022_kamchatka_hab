@@ -59,10 +59,15 @@ list(
     extract_slstr_sst(snapista, py_sst_slstr),
     format = "file"
   ),
-  tar_target(roi_map, make_roi_map(kamchatka_shp)),
   tar_target(
     chl_anomaly_series,
     generate_chl_anomaly_time_series(olci_chl, kamchatka_shp),
+    format = "file"
+  ),
+  tar_target(roi_map, make_roi_map(kamchatka_shp)),
+  tar_target(
+    time_series_map,
+    make_time_series_map(kamchatka_shp, chl_anomaly_series),
     format = "file"
   )
 )
