@@ -27,7 +27,7 @@ knitr::opts_knit$set(root.dir = here::here())
 
 \begin{abstract}
 In this study, we investigated the remote sensing evidence of the harmful algal bloom at the coast of Kamchatka, a widely reported ecological disaster in the autumn of 2020.
-We analyzed time series of relative chlorophyll concentration anomaly maps derived from Sentinel-3 OLCI and Sentinel-2 data and historical sea surface temperature data from Sentinel-3 SLSTR.
+We analyzed time series of relative chlorophyll concentration anomaly maps derived from Sentinel-3 OLCI and Sentinel-2 MSI data and historical sea surface temperature data from Sentinel-3 SLSTR.
 Significant chlorophyll concentration anomaly values were observed during September and October of 2020.
 There was also a notable increase in sea surface temperature compared to earlier years.
 Both of these effects are indirect evidence for the presence of an algal bloom.
@@ -35,7 +35,7 @@ Without any \textit{in situ} measurements, our results do not constitute an irre
 \end{abstract}
 
 \begin{keywords}
-Red tide,
+Harmful algal bloom,
 Chlorophyll,
 Chlorophyll anomaly,
 Sentinel-3,
@@ -66,7 +66,7 @@ Multiple explanations of the events were considered, both technogenic and natura
 A harmful algal bloom explains both the poisoning symptoms in humans and the large-scale death of marine animals.
 The former can be caused by several toxins potentially present in some phytoplankton species, and the latter can result from blooms for many reasons \cite{richardson_harmful_1997}.
 
-Red tides are not uncommon in Kamchatka: they are well-known and studied phenomena that occur every year with increasing frequency.
+Harmful algal blooms are not uncommon in Kamchatka: they are well-known and studied phenomena that occur every year with increasing frequency.
 In almost all coastal waters during summers and autumns, there is a risk of encountering toxic algae \cite{adrianov_ecological_2011}.
 Nevertheless, the lack of knowledge about the phenomena among the general public led to the spreading of conspiratorial beliefs about a cover-up of a massive anthropogenic contamination over social media.
 That is one of the reasons we believe it is essential to conduct studies like ours using open data and open software, such as the Copernicus Programme's Sentinel missions and the Sentinel Application Platform.
@@ -83,7 +83,7 @@ OLCI products have a spatial resolution of 300 meters, and the average revisit p
 
 We also looked at a time series of sea surface temperatures from 76 level 2 SLSTR products covering August to October 2017-2020 to check if there was a temperature anomaly compared to the previous years \cite{slstr}.
 
-Where possible, we additionally looked at Sentinel-2 images, which offer much more detailed data with a spatial resolution of 10 meters but a longer revisit period.
+Where possible, we additionally looked at Sentinel-2 images, which offer much more detailed data with a spatial resolution of 10 meters but a longer revisit period compared to Sentinel-3.
 When available, Sentinel-2 provides an advantage over Sentinel-3 in terms of mapping small blooms in complex coastal waters \cite{caballero_new_2020}.
 13 level 1 products were not obscured by clouds, and we processed them with C2RCC to extract chlorophyll concentrations and produce atmospherically corrected true color images.
 
@@ -169,7 +169,7 @@ tm_shape(s2, bbox = roi) +
 
 @
 
-The timeline suggested by these results does not contradict the timeline of the reported events.
+The timeline suggested by these results is consistent with the timeline of the reported events.
 The first poisoning symptoms by the surfers were reported as early as September 9th.
 There is no suitable Sentinel-3 image, but figure \ref{fig:s2_september9} shows a map of chlorophyll concentrations for September 9th derived from Sentinel-2 data.
 We look at concentration directly here because there are not enough Sentinel-2 images to construct an anomaly map.
@@ -279,10 +279,9 @@ It can be seen that both mean and median temperatures along the east coast were 
 This study aimed to establish whether remote sensing data confirms the harmful algal bloom explanation of the ecological disaster on the eastern coast of Kamchatka in autumn of 2020.
 We analyzed time series of relative chlorophyll concentration anomalies covering the period of late August to November.
 Using data from Sentinel-3 (OLCI and SLSTR) and Sentinel-2 satellites, we observed significant chlorophyll concentration anomaly values during September and October and a notable increase in sea surface temperature compared to earlier years, both of which constitute indirect evidence for the presence of an algal bloom.
-The bloom evolution timeline suggested by our results does not contradict the reported events.
+The bloom evolution timeline suggested by our results is consistent with the reported events.
 Since we do not have any \textit{in situ} measurements of phytoplankton concentrations, we cannot assure that the described ecological situation was caused by a harmful algal bloom based on our results alone.
 However, our results provide an additional line of evidence supporting that hypothesis, and in conjunction with an extensive on-site investigation report by the Far Eastern Federal University, leave a harmful algal bloom as the only plausible explanation.
-
 
 \bibliographystyle{IEEEbib}
 \bibliography{bibliography}
