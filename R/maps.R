@@ -130,7 +130,12 @@ make_time_series_map <- function(shp, ...) {
       tm_credits(
         text = date,
         size = 0.31,
-        position = c("left", "top"),
+        position = c(0.02, 0.9),
+      ) +
+      tm_scale_bar(
+        breaks = c(0, 25, 50, 75, 100),
+        text.size = 0.75,
+        position = c(0.02, 0.8)
       )
   }
 
@@ -149,21 +154,16 @@ make_time_series_map <- function(shp, ...) {
     ) +
     tm_layout(
       legend.only = TRUE,
-      legend.text.size = 0.4,
-      legend.height = 0.3,
+      legend.text.size = 0.3,
+      legend.height = 0.1,
     ) +
-    tm_scale_bar(
-      position = c("left", "bottom"),
-      breaks = c(0, 50, 100),
-      text.size = 0.4,
-    ) +
-    tm_compass(size = 1.5, position = c("right", "bottom"))
+    tm_compass(size = 1.2, position = c("right", "bottom"))
 
   ranomaly_maps <- tmap_arrange(ranomaly_maps)
 
   tmap_save(
     ranomaly_maps, here::here("Maps", "_ranomaly_maps.png"),
-    width = 110, height = 60, units = "mm", dpi=500,
+    width = 110, height = 60, units = "mm", dpi=600,
   )
 
   here::here("Maps", "_ranomaly_maps.png")
