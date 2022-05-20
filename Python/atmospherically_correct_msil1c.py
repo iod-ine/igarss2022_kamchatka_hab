@@ -17,26 +17,26 @@ import pathlib
 
 import snapista
 
-gpt_path = pathlib.Path('~/.esa-snap/bin/gpt').expanduser()
+gpt_path = pathlib.Path("~/.esa-snap/bin/gpt").expanduser()
 
-data = (pathlib.Path() / 'Data').absolute()
-msi = data / 'raw' / 'MSI'
-products = [msi / f for f in os.listdir(msi) if 'MSIL1C' in f]
-products = [p for p in products if 'T57UVU' in p.stem]
+data = (pathlib.Path() / "Data").absolute()
+msi = data / "raw" / "MSI"
+products = [msi / f for f in os.listdir(msi) if "MSIL1C" in f]
+products = [p for p in products if "T57UVU" in p.stem]
 products.sort()
 
 gpt = snapista.GPT(gpt_path)
 
 resample = snapista.operators.Resample()
-resample.reference_band = 'B2'
+resample.reference_band = "B2"
 
 import_vector = snapista.operators.ImportVector()
 import_vector.separate_shapes = False
-import_vector.vector_file = 'Data/vectors/kamchatka.shp'
+import_vector.vector_file = "Data/vectors/kamchatka.shp"
 
 land_sea_mask = snapista.operators.LandSeaMask()
 land_sea_mask.use_srtm = False
-land_sea_mask.geometry = 'kamchatka'
+land_sea_mask.geometry = "kamchatka"
 land_sea_mask.invert_geometry = True
 land_sea_mask.shoreline_extension = 3
 
@@ -53,10 +53,10 @@ graph.add_node(c2rcc)
 gpt.run(
     graph,
     products,
-    output_folder='Data/proc/c2rcc',
-    format_='BEAM-DIMAP',
-    suffix='_c2rcc',
-    prefix='S2_',
+    output_folder="Data/proc/c2rcc",
+    format_="BEAM-DIMAP",
+    suffix="_c2rcc",
+    prefix="S2_",
     date_time_only=True,
     suppress_stderr=False,
 )
