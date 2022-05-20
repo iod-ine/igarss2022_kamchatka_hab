@@ -1,4 +1,8 @@
+# This is a collection of functions that recalculate concentrations into anomalies.
+
 make_anomaly_map <- function(anomaly, date, bbox, kamchatka, output_name) {
+  # Generate and save a chlorophyll anomaly map.
+
   map <- tm_shape(anomaly, bbox = bbox) +
     tm_raster(
       style = "cont",
@@ -25,6 +29,8 @@ make_anomaly_map <- function(anomaly, date, bbox, kamchatka, output_name) {
 }
 
 make_relative_anomaly_map <- function(anomaly, date, bbox, kamchatka, output_name) {
+  # Generate and save a relative chlorophyll anomaly map.
+
   map <- tm_shape(anomaly, bbox = bbox) +
     tm_raster(
       style = "cont",
@@ -51,6 +57,8 @@ make_relative_anomaly_map <- function(anomaly, date, bbox, kamchatka, output_nam
 }
 
 generate_chl_anomaly_time_series <- function(files, kamchatka_shp) {
+  # Generate a time-series of chlorophyll anomaly and relative anomaly maps.
+
   dates <- str_extract(files, "\\d{4}-\\d{2}-\\d{2}T\\d{2}-\\d{2}-\\d{2}")
   chlorophyll <- tibble(file = files, date = ymd_hms(dates))
   dir.create(here::here("Maps"), showWarnings = FALSE)
@@ -60,7 +68,9 @@ generate_chl_anomaly_time_series <- function(files, kamchatka_shp) {
   elizovskiy_rayon <- filter(kamchatka, NAME_2 == "Elizovskiy rayon")
 
   create_anomaly_maps_for_date <- function(file, date) {
-    # reference value is calculated for 60 days ending 15 days before
+    # Calculate the relative anomaly map for a given date.
+
+    # Reference value is calculated for 60 days ending 15 days before
     start <- date - days(75)
     end <- date - days(15)
     files <- filter(chlorophyll, between(date, start, end))[["file"]]
@@ -68,22 +78,22 @@ generate_chl_anomaly_time_series <- function(files, kamchatka_shp) {
     previous_chl <- rast(files)
     current_chl <- rast(file)
 
-    # there are some artifacts in the chlorophyll maps with insanely high values
+    # There are some artifacts in the chlorophyll maps with insanely high values
     previous_chl[previous_chl > 100] <- NA
     current_chl[current_chl > 100] <- NA
 
-    # relative anomaly is the ratio of the anomaly to the reference value
+    # Relative anomaly is the ratio of the anomaly to the reference value
     reference_concentration <- app(previous_chl, median, na.rm = TRUE)
     anomaly <- current_chl - reference_concentration
     relative_anomaly <- anomaly / reference_concentration
 
-    # the rasters will be useful later for final map generation
+    # The rasters will be useful later for final map generation
     writeRaster(
       relative_anomaly,
       here::here("Data", "anomaly", paste0("ranomaly_", basename(file)))
     )
 
-    # to select representative dates, save all maps (with different zoom levels)
+    # To select representative dates, save all maps (with different zoom levels)
     output_basename <- here::here("Maps", basename(file))
 
     out0 <- str_replace(output_basename, "\\.tif", "_anomaly_0.png")

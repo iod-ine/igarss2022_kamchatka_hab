@@ -1,4 +1,9 @@
+# This is a collection of functions that generate map used in the paper.
+
 make_roi_map <- function(shp) {
+  # Generate the ROI map (Figure 1).
+  # Returns a list with the main map and the inset map.
+
   kamchatka <- read_sf(shp)
   elizovskiy_rayon <- filter(kamchatka, NAME_2 == "Elizovskiy rayon")
   russia <- geodata::gadm("Russia", path = here::here("Data"), level = 1) |>
@@ -86,6 +91,9 @@ make_roi_map <- function(shp) {
 }
 
 make_time_series_map <- function(shp, ...) {
+  # Generate the chlorophyll anomaly time-series map (Figure 2).
+
+  # This ROI was derived by trial and error
   anomaly_roi <- rbind(
     c(439517.2, 5747000),
     c(740896.1, 5747000),
@@ -111,6 +119,9 @@ make_time_series_map <- function(shp, ...) {
   kamchatka <- read_sf(shp)
 
   make_ranomaly_map <- function(file) {
+    # Generate a map for the given relative anomaly TIFF file.
+    # This is used as a support function, to map across the anomaly files.
+
     date <- str_extract(file, "\\d{4}-\\d{2}-\\d{2}")
     anomaly <- rast(file)
 
@@ -141,6 +152,7 @@ make_time_series_map <- function(shp, ...) {
 
   ranomaly_maps <- map(files, make_ranomaly_map)
 
+  # Add the color map and the north arrow
   anomaly <- rast(files[[1]])
   ranomaly_maps[[8]] <- tm_shape(anomaly, bbox = anomaly_roi) +
     tm_raster(

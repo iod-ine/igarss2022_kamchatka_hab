@@ -1,4 +1,5 @@
-# Constants for the ROI map
+# This is a collection of constants used for maps.
+
 avacha_bay <- st_polygon(
   list(
     rbind(
