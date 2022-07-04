@@ -1,0 +1,35 @@
+---
+title: "Remote sensing evidence for the harmful algal bloom in Kamchatka"
+subtitle: "Explanation for the 2020 environmental disaster"
+date: July 17, 2022
+author: Ivan Dubrovin
+format:
+  revealjs:
+    logo: Skoltech_Logo_Black.png
+    theme: [simple, theme.scss]
+---
+
+## Outline
+
+```{r}
+#| label: setup
+#| include: false
+library(targets)
+```
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
