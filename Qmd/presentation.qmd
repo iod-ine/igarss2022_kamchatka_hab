@@ -18,6 +18,44 @@ library(targets)
 
 ## Two parts of the presentation
 
+**Full title:** Remote sensing evidence for the harmful algal bloom explanation of the ecological situation in Kamchatka in autumn of 2020
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+### The study
+* Very generic 
+* Sentinel-3 OLCI^[Ocean and Land Color Instrument] data
+* Chl anomaly time-series
+* Trace the history of the HAB
+:::
+::: {.column width="50%"}
+### The approach
+* Reproducible research framework
+* *(almost)*^[There is no way to automate LTA Sentinel-3 data retrieval] All processing done in code
+* Dynamic paper and presentation
+* Fully open source
+:::
+::::
+
+::: {.notes}
+The full title of our paper is "Remote Sensing Evidence For The Harmful Algal Bloom Explanation Of The Ecological Situation In Kamchatka In Autumn Of 2020."
+By itself, this is not a very interesting study.
+We simply look at chlorophyll concentration anomaly time series over the east coast of Kamchatka peninsula for the dates of a suspected algal bloom event.
+I think the approach we adopted is more interesting than the study itself. <NEXT>.
+The study is very generic.
+The main information source is the Sentinel-3 mission, specifically the Ocean and Land Color instrument.
+One of its products is the estimated chlorophyll concentration in the water.
+We recalculated these concentrations into a time-series of chlorophyll anomalies and used it to trace the suspected bloom in time.
+I am sure most of you have seen many similar studies, so I will try not to focus on it too much.
+
+The approach we took focuses on reproducibility. Almost every step of the study is automated using scripts.
+I say almost because I don't think there is a way to automate the retrieval of long-term Sentinel-3 ocean data yet.
+The EUMETSAT team is working on a new platform that will have an API, which would allow full end-to-end automation, but for now, the only way to access the data is to search through the archive manually.
+The PDF of the paper and the HTML of this presentation are dynamic documents, meaning that they are generated from the results of the code automatically.
+And, of course, all our code is open and available on GitHub.
+:::
 
 # Part 1: The study
 
