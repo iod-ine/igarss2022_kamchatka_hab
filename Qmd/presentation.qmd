@@ -1,6 +1,6 @@
 ---
-title: "Remote sensing evidence for the harmful algal bloom in Kamchatka"
-subtitle: "Explanation for the 2020 environmental disaster"
+title: "Remote sensing evidence for the 2020 harmful algal bloom in Kamchatka"
+subtitle: "A remote sensing study in the reproducible research framework"
 date: July 17, 2022
 author: Ivan Dubrovin
 format:
@@ -9,27 +9,94 @@ format:
     theme: [simple, theme.scss]
 ---
 
-## Outline
-
 ```{r}
-#| label: setup
 #| include: false
+#| label: setup
+knitr::opts_knit$set(root.dir = here::here())
 library(targets)
 ```
 
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+## Two parts of the presentation
 
-## Bullets
 
-When you click the **Render** button a document will be generated that includes:
+# Part 1: The study
 
--   Content authored with markdown
--   Output from executable code
+## Background
 
-## Code
+What happened
 
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+## Region of interest
+
+## Data
+
+## Methods
+
+$$
+\Delta_r \text{Chl-a} = \frac{\text{Chl-a} - \text{Chl-a}^{\text{ref}}}{\text{Chl-a}^{\text{ref}}}.
+$$
+
+## Chlorophyll anomaly evolution
+
+# Part 2: The approach
+
+## Literate programming
+
+Literate programming is a programming paradigm introduced by Donald Knuth in which a computer program is given an explanation of its logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which compilable source code can be generated.
+
+Any change is automatically included into the output: no copy-pasting of images, no chance to forget to update the final result.
+
+## Constituents
+
+* R Markdown
+* Quarto
+* Python
+* R
+
+## Python and R
+
+Very easy to use together
+
+### Python
+- Wrapper around SNAP GPT
+- `lxml`
+
+### R
+- Processing and visualization of spatial outputs
+- `sf`, `terra`, `tmap`, `targets`, `knitr`
+
+## R Markdown and Quarto
+
+## Target network
 
 ```{r}
-1 + 1
+#| echo: false
+tar_visnetwork(targets_only = TRUE)
 ```
+
+::: footer
+How to automate the data retrieval?
+:::
+
+## How to recreate the results
+
+Run the pipeline.
+
+```r
+targets::tar_make()
+```
+
+Compile the paper pdf.
+
+```r
+knitr::knit()
+```
+
+Generate the presentation html.
+
+```shell
+quarto render
+```
+
+::: footer
+Assuming you got the archived Sentinel-3 data.
+:::
