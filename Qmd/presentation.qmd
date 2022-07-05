@@ -1,8 +1,9 @@
 ---
 title: "Remote sensing evidence for the 2020 harmful algal bloom in Kamchatka"
 subtitle: "A remote sensing study in the reproducible research framework"
-date: July 17, 2022
+date: IGARSS 2022
 author: Ivan Dubrovin
+institute: Skolkovo Institute of Science and Technology
 format:
   revealjs:
     logo: Skoltech_Logo_Black.png
@@ -45,7 +46,7 @@ library(tmap)
 The full title of our paper is "Remote Sensing Evidence For The Harmful Algal Bloom Explanation Of The Ecological Situation In Kamchatka In Autumn Of 2020."
 By itself, this is not a very interesting study.
 We simply look at chlorophyll concentration anomaly time series over the east coast of Kamchatka peninsula for the dates of a suspected algal bloom event.
-I think the approach we adopted is more interesting than the study itself. <NEXT>.
+I think the approach we adopted is more interesting than the study itself. NEXT_SLIDE.
 The study is very generic.
 The main information source is the Sentinel-3 mission, specifically the Ocean and Land Color instrument.
 One of its products is the estimated chlorophyll concentration in the water.
@@ -78,12 +79,12 @@ All of theses can be explained by a *bloom of toxic algae*.
 Can we additionally support that hypothesis with remote sensing data?
 
 ::: {.notes}
-At the end of September -- beginning of October 2020, an environmental disaster was widely reported on the eastern coast of Kamchatka. <NEXT>
-A storm washed many dead marine animals to the shore, which initiated an outcry over the media. <NEXT>
-Reports of poisoning symptoms, skin and eye irritation from surfers in the area surfaced and added fuel to the growing public belief in some unspecified anthropogenic pollution. <NEXT> 
-Photos of discolored water and foam along the coast circulated in social media. <NEXT>
+At the end of September -- beginning of October 2020, an environmental disaster was widely reported on the eastern coast of Kamchatka. NEXT_SLIDE
+A storm washed many dead marine animals to the shore, which initiated an outcry over the media. NEXT_SLIDE
+Reports of poisoning symptoms, skin and eye irritation from surfers in the area surfaced and added fuel to the growing public belief in some unspecified anthropogenic pollution. NEXT_SLIDE 
+Photos of discolored water and foam along the coast circulated in social media. NEXT_SLIDE
 Several expeditions were sent to the site to investigate, the most notable being the group of researchers from the Far Eastern Federal University.
-They considered multiple possible explanations of the events, both technogenic and natural, and ultimately concluded that the most likely explanation <NEXT> is the bloom of toxic algae.
+They considered multiple possible explanations of the events, both technogenic and natural, and ultimately concluded that the most likely explanation NEXT_SLIDE is the bloom of toxic algae.
 A harmful algal bloom would explain all observations.
 We wanted to see if remote sensing data aligns with this hypothesis.
 :::
@@ -130,7 +131,7 @@ Processed using C2RCC^[Case 2 Regional Coast Color] in SNAP to extract chl conce
 ::: {.notes}
 The primary data source for our analysis was the Sentinel-3 mission.
 We worked with a time series of chlorophyll concentrations from 76 level 2 OLCI products covering June to November.
-We also looked at sea surface temperatures from SLSTR products covering August to October 2017-2020 to check if there was a temperature anomaly compared to the previous years. <NEXT>
+We also looked at sea surface temperatures from SLSTR products covering August to October 2017-2020 to check if there was a temperature anomaly compared to the previous years. NEXT_SLIDE
 Where possible, we additionally looked at Sentinel-2 images, which offer much more detailed data with a spatial resolution of 10 meters, but a longer revisit period compared to Sentinel-3, making it much harder to find suitable images.
 The total of 13 products were not covered by clouds, and we processed them with C2RCC to extract chlorophyll concentrations and produce atmospherically corrected true color images.
 This is the same algorithm used in Sentinel-3.
@@ -152,7 +153,7 @@ Visual analysis of the time-series of relative chl anomalies to trace the evolut
 ::: {.notes}
 To assess the presence of an algal bloom, we used relative chlorophyll anomaly maps to put observed concentrations into the context of average concentration over the recent past.
 A reference concentration for any given date was calculated as a median across all images obtained in the 61-day period ending 15 days before.
-We used a rolling window calculation, so each day had a unique reference. <NEXT>
+We used a rolling window calculation, so each day had a unique reference. NEXT_SLIDE
 Then we visually analyzed the time-series of relative anomaly maps to see if the chlorophyll concentrations follow the timeline of the events.
 :::
 
@@ -212,12 +213,12 @@ Literate programming has been gaining traction recently.
 It is a paradigm in which natural language is mixed with snippets of code.
 It allows for generation of transparent and reproducible reports, papers, presentations and so on.
 The screenshot on the right is a part of the source code of our paper.
-You can see the text and the code to generate a map in the same document. <NEXT>
+You can see the text and the code to generate a map in the same document. NEXT_SLIDE
 Compiling it will run the code and automatically generate an output of almost any format you can possibly need.
 The paper, for example, is rendered to a LaTeX source document that is then compiled to a PDF.
-This presentation is rendered to HTML and can be opened in any modern browser. <NEXT>
+This presentation is rendered to HTML and can be opened in any modern browser. NEXT_SLIDE
 This removes the need to manually keep track of any computational output in the resulting documents.
-If code changes, everything depending on it is updated right away. <NEXT>
+If code changes, everything depending on it is updated right away. NEXT_SLIDE
 And every document comes with the source code that produced it.
 For example, if you liked any of the maps in the paper, you can open the repository and look at the code that generated it.
 You don't need to manually implement the methods from their description because they come with the paper itself.
@@ -239,15 +240,15 @@ All the components all open source and free.
 [github.com/iod-ine/igarss2022_kamchatka_hab](https://github.com/iod-ine/igarss2022_kamchatka_hab)
 
 ::: {.notes}
-The components required to recreate our results or to create new results like ours are all open source and free. <NEXT>
+The components required to recreate our results or to create new results like ours are all open source and free. NEXT_SLIDE
 We used a combination of Python and R scripts to automate the processing and generate all maps.
-You don't have to use both at the same time, you can use one language you are more comfortable with. <NEXT>
+You don't have to use both at the same time, you can use one language you are more comfortable with. NEXT_SLIDE
 To process the Sentinel imagery, we used SNAP.
-More specifically, we added a Python wrapper around SNAP graph processing tool to run the computations on a headless workstation using a simple Python script. <NEXT>
+More specifically, we added a Python wrapper around SNAP graph processing tool to run the computations on a headless workstation using a simple Python script. NEXT_SLIDE
 And to generate the output, we used R Markdown and its more recent successor, Quarto.
-These are literate programming frameworks. <NEXT>
+These are literate programming frameworks. NEXT_SLIDE
 To version control and openly host the code, we used Git and GitHub.
-It's even possible to host the web versions of the papers and presentations directly from GitHub for free. <NEXT>
+It's even possible to host the web versions of the papers and presentations directly from GitHub for free. NEXT_SLIDE
 I invite you to take a look at the repository.
 :::
 
@@ -298,9 +299,9 @@ quarto render Qmd/presentation.qmd
 ```
 
 ::: {.notes}
-If you were interested in recreating our results, everything comes down to three steps. <NEXT>
+If you were interested in recreating our results, everything comes down to three steps. NEXT_SLIDE
 The first is to actually run the processing pipeline.
-This will execute the graph from the previous slide and start tracking which tasks have been updated and need to be rerun in case you decide to change something in the code. <NEXT>
+This will execute the graph from the previous slide and start tracking which tasks have been updated and need to be rerun in case you decide to change something in the code. NEXT_SLIDE
 And to generate the paper PDF or the presentation HTML, you run a respective command either in R console or in the terminal.
 All steps can, if needed, be reduced to one step by adding the compilation of output as the last step of the processing pipeline.
 We just chose to separate them.
