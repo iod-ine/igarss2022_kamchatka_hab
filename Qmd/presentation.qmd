@@ -138,9 +138,23 @@ This is the same algorithm used in Sentinel-3.
 
 ## Methods
 
+**Relative chl anomaly**.
+A reference concentration $\text{Chl-a}^{\text{ref}}$ for any given date is the median across the 61-day period ending 15 days before. 
+
 $$
 \Delta_r \text{Chl-a} = \frac{\text{Chl-a} - \text{Chl-a}^{\text{ref}}}{\text{Chl-a}^{\text{ref}}}.
 $$
+
+. . .
+
+Visual analysis of the time-series of relative chl anomalies.
+
+::: {.notes}
+To assess the presence of an algal bloom, we used relative chlorophyll anomaly maps to put observed concentrations into the context of average concentration over the recent past.
+A reference concentration for any given date was calculated as a median across all images obtained in the 61-day period ending 15 days before.
+We used a rolling window calculation, so each day had a unique reference. <NEXT>
+Then we visually analyzed the time-series of relative anomaly maps to see if the chlorophyll concentrations follow the timeline of the events.
+:::
 
 ## Chlorophyll anomaly evolution
 
