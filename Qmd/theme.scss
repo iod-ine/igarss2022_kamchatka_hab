@@ -1,0 +1,10 @@
+/*-- scss:defaults --*/
+
+$presentation-font-size-root: 30px;      // Reduce the font size (from 40px)
+$presentation-h1-font-size: 2em;         // Reduce tile font size (from 2.5em)
+
+/*-- scss:rules --*/
+
+.reveal .slide h2 {
+    margin-bottom: 50px;
+}
