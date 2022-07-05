@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.640">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Remote sensing evidence for the harmful algal bloom explanation of the ecological situation in Kamchatka in autumn of 2020</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="paper_files/libs/clipboard/clipboard.min.js"></script>
+<script src="paper_files/libs/quarto-html/quarto.js"></script>
+<script src="paper_files/libs/quarto-html/popper.min.js"></script>
+<script src="paper_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="paper_files/libs/quarto-html/anchor.min.js"></script>
+<link href="paper_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="paper_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="paper_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="paper_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="paper_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Remote sensing evidence for the harmful algal bloom explanation of the ecological situation in Kamchatka in autumn of 2020</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    <p>In this study, we investigated the remote sensing evidence of the harmful algal bloom at the coast of Kamchatka, a widely reported ecological disaster in the autumn of 2020. We analyzed time series of relative chlorophyll concentration anomaly maps derived from Sentinel-3 OLCI and Sentinel-2 MSI data and historical sea surface temperature data from Sentinel-3 SLSTR. Significant chlorophyll concentration anomaly values were observed during September and October of 2020. There was also a notable increase in sea surface temperature compared to earlier years. Both of these effects are indirect evidence for the presence of an algal bloom. Without any measurements, our results do not constitute an irrefutable case by themselves, but in conjunction with extensive on-site investigation reports, leave a harmful algal bloom as the only plausible explanation.</p>
+  </div>
+</div>
+
+</header>
+
+<section id="sec-introduction" class="level1">
+<h1>Introduction</h1>
+<p>At the end of September – beginning of October of 2020, an environmental disaster was widely reported in the Avacha Bay on the eastern coast of Kamchatka (Fig. <a href="#fig-roi">1</a>). On September 29th, a storm washed many dead marine animals to the shore of Avacha Bay, which initiated an outcry over the media. In light of these events, reports of poisoning symptoms, skin and eye irritation from surfers on the Khalaktyrsky beach surfaced and added fuel to the growing public belief in unspecified anthropogenic pollution.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-roi" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="paper_files/figure-html/fig-roi-1.png" class="img-fluid figure-img" width="1910"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: The region of interest. Surfers on the Khalaktyrsky beach reported poisoning symptoms after contact with the water. Dead marine animals were washed out by a storm to the shores of the Avacha Bay.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Several expeditions were sent to the site to investigate, most notably the group of researchers from the Far Eastern Federal University that later produced a report on their findings available on YouTube <span class="citation" data-cites="vinnikov_ecological_2020">(<a href="#ref-vinnikov_ecological_2020" role="doc-biblioref">Vinnikov 2020</a>)</span> (in Russian). Multiple explanations of the events were considered, both technogenic and natural, and they ultimately concluded that the most likely explanation is the bloom of toxic dinoflagellates. A harmful algal bloom explains both the poisoning symptoms in humans and the large-scale death of marine animals. The former can be caused by several toxins potentially present in some phytoplankton species, and the latter can result from blooms for many reasons <span class="citation" data-cites="richardson_harmful_1997">(<a href="#ref-richardson_harmful_1997" role="doc-biblioref">Richardson 1997</a>)</span>.</p>
+<p>Harmful algal blooms are not uncommon in Kamchatka: they are well-known and studied phenomena that occur every year with increasing frequency. In almost all coastal waters during summers and autumns, there is a risk of encountering toxic algae <span class="citation" data-cites="adrianov_ecological_2011">(<a href="#ref-adrianov_ecological_2011" role="doc-biblioref">Adrianov 2011</a>)</span>. Nevertheless, the lack of knowledge about the phenomena among the general public led to the spreading of conspiratorial beliefs about a cover-up of a massive anthropogenic contamination over social media. That is one of the reasons we believe it is essential to conduct studies like ours using open data and open software, such as the Copernicus Programme’s Sentinel missions and the Sentinel Application Platform.</p>
+<p>Most of the studies related to the detection of algal blooms use point <em>in situ</em> data to choose the best spectral index to extrapolate the observations over an area of interest. Since we do not have any <em>in situ</em> measurements, we used derived chlorophyll concentrations products instead of spectral indices. It is essential to consider concentrations only in the context of the overall trophic state of the water body of interest <span class="citation" data-cites="german_detection_2017">(<a href="#ref-german_detection_2017" role="doc-biblioref">German et al. 2017</a>)</span>, so we recalculated them into the relative anomaly maps as described in <span class="citation" data-cites="wang_satellite-derived_2021">(<a href="#ref-wang_satellite-derived_2021" role="doc-biblioref">Wang et al. 2021</a>)</span>.</p>
+</section>
+<section id="sec-materials" class="level1">
+<h1>Materials and methods</h1>
+<p>The primary data source for our analysis was the Sentinel-3 mission. We worked with a time series of chlorophyll concentrations from 76 level 2 OLCI products covering June to November 2020 <span class="citation" data-cites="olci">(<a href="#ref-olci" role="doc-biblioref">EUMETSAT 2021</a>)</span>. These concentrations are derived from the C2RCC atmospheric correction algorithm, a set of neural networks trained to inverse the radiative transfer model in complex coastal waters <span class="citation" data-cites="brockmann_evolution_2016">(<a href="#ref-brockmann_evolution_2016" role="doc-biblioref">Brockmann et al. 2016</a>)</span>. OLCI products have a spatial resolution of 300 meters, and the average revisit period for the data we used was 1.9 days.</p>
+<p>We also looked at a time series of sea surface temperatures from 76 level 2 SLSTR products covering August to October 2017-2020 to check if there was a temperature anomaly compared to the previous years <span class="citation" data-cites="slstr">(<a href="#ref-slstr" role="doc-biblioref">EUMETSAT 2018</a>)</span>.</p>
+<p>Where possible, we additionally looked at Sentinel-2 images, which offer much more detailed data with a spatial resolution of 10 meters but a longer revisit period compared to Sentinel-3. When available, Sentinel-2 provides an advantage over Sentinel-3 in terms of mapping small blooms in complex coastal waters <span class="citation" data-cites="caballero_new_2020">(<a href="#ref-caballero_new_2020" role="doc-biblioref">Caballero et al. 2020</a>)</span>. 13 level 1 products were not obscured by clouds, and we processed them with C2RCC to extract chlorophyll concentrations and produce atmospherically corrected true color images.</p>
+<p>To assess the presence of an algal bloom, we used relative chlorophyll anomaly maps that put observed concentrations into the context of average concentration over the recent past <span class="citation" data-cites="wang_satellite-derived_2021">(<a href="#ref-wang_satellite-derived_2021" role="doc-biblioref">Wang et al. 2021</a>)</span>. A reference concentration <span class="math inline">\(\text{Chl-a}^{\text{ref}}\)</span> for any given date was calculated as a median across all images obtained in the 61-day period ending 15 days before. In contrast to <span class="citation" data-cites="wang_satellite-derived_2021">(<a href="#ref-wang_satellite-derived_2021" role="doc-biblioref">Wang et al. 2021</a>)</span>, we used a rolling window to calculate a unique reference product for every date instead of calculating two fixed reference values per month. The relative chlorophyll anomaly was calculated using (<a href="#eq-ranomaly">Equation&nbsp;1</a>).</p>
+<p><span id="eq-ranomaly"><span class="math display">\[
+  \Delta_r \text{Chl-a} = \frac{\text{Chl-a} - \text{Chl-a}^{\text{ref}}}{\text{Chl-a}^{\text{ref}}}.
+\tag{1}\]</span></span></p>
+<p>We calculated temperature anomaly maps from SLSTR data by subtracting mean and median sea surface temperature products for September 2017-2019 from the corresponding products for September 2020.</p>
+<p>The lists of used products and the Python and R scripts used to automate the data processing and generate the maps are available on GitHub <span class="citation" data-cites="github">(<a href="#ref-github" role="doc-biblioref">Dubrovin 2021</a>)</span>.</p>
+</section>
+<section id="seq-results" class="level1">
+<h1>Results and discussion</h1>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-anomaly" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="paper_files/figure-html/fig-anomaly-1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Chlorophyll relative anomaly time series over the region of interest, derived from OLCI level 2 data for the period from August to November, 2020. Pale colors correspond to average seasonal concentrations. Bright red indicates large anomalies.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Figure <a href="#fig-anomaly">2</a> shows a representative subset of the relative chlorophyll anomaly time series. The dates to include were chosen by selecting the images least affected by clouds covering the dates of interest with a consistent time step. Noisy high-value pixelated areas on the images correspond to high-uncertainty predictions on the edges of clouds and do not contain any helpful information.</p>
+<p>The coastal area has no significant deviations from the average at the end of August. There are some patches where the concentrations are slightly higher, but overall the relative anomaly averages almost zero. The situation changes in the middle of September. Even though the values of relative anomalies are not large, over-concentration is noticeable along the whole coast. The relative anomaly intensifies towards the end of September and the beginning of October. Concentrations are significantly larger than the reference, and they stay at this level until the middle of October. The situation becomes more stable only by the end of October, and by the beginning of November, there are again almost no deviations from the reference.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-s2-september9" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="paper_files/figure-html/fig-s2-september9-1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3: Chlorophyll concentration for September 9th, 2020 derived from level 1 Sentinel-2 data with C2RCC atmospheric correction algorithm.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The timeline suggested by these results is consistent with the timeline of the reported events. The first poisoning symptoms by the surfers were reported as early as September 9th. There is no suitable Sentinel-3 image, but figure <a href="#fig-s2-september9">3</a> shows a map of chlorophyll concentrations for September 9th derived from Sentinel-2 data. We look at concentration directly here because there are not enough Sentinel-2 images to construct an anomaly map. It can be seen that there are notable concentrations of chlorophyll along the Khalaktyrsky beach and true color images for that date show a change of color of the water. By September 29th, when the die-offs of marine animals were discovered, the bloom was in full force for a long time. It could have caused the die-offs either by directly producing toxins harmful to animals or by creating hypoxic conditions resulting from partial decay of the bloom.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-sst" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="paper_files/figure-html/fig-sst-1.png" class="img-fluid figure-img" width="3500"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4: Sea surface temperature anomalies for September of 2020 compared to three previous years.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Figure <a href="#fig-sst">4</a> compares average temperatures during September in 2020 with the previous years. It can be seen that both mean and median temperatures along the east coast were larger than average over the past three years, which could have played a part in the initiation of the bloom.</p>
+</section>
+<section id="seq-conclusion" class="level1">
+<h1>Conclusions</h1>
+<p>This study aimed to establish whether remote sensing data confirms the harmful algal bloom explanation of the ecological disaster on the eastern coast of Kamchatka in autumn of 2020. We analyzed time series of relative chlorophyll concentration anomalies covering the period of late August to November. Using data from Sentinel-3 (OLCI and SLSTR) and Sentinel-2 satellites, we observed significant chlorophyll concentration anomaly values during September and October and a notable increase in sea surface temperature compared to earlier years, both of which constitute indirect evidence for the presence of an algal bloom. The bloom evolution timeline suggested by our results is consistent with the reported events. Since we do not have any <em>in situ</em> measurements of phytoplankton concentrations, we cannot assure that the described ecological situation was caused by a harmful algal bloom based on our results alone. However, our results provide an additional line of evidence supporting that hypothesis, and in conjunction with an extensive on-site investigation report by the Far Eastern Federal University, leave a harmful algal bloom as the only plausible explanation.</p>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-adrianov_ecological_2011" class="csl-entry" role="doc-biblioentry">
+Adrianov, A. V. 2011. <span>“Ecological Security of the <span>Russian</span> <span>Far</span> <span>Eastern</span> Seas.”</span> <em>Herald of the Russian Academy of Sciences</em> 81 (2): 111–19.
+</div>
+<div id="ref-brockmann_evolution_2016" class="csl-entry" role="doc-biblioentry">
+Brockmann, Carsten, Roland Doerffer, Marco Peters, Kerstin Stelzer, Sabine Embacher, and Ana Ruescas. 2016. <span>“Evolution of the <span>C2rcc</span> <span>Neural</span> <span>Network</span> for <span>Sentinel</span> 2 and 3 for the <span>Retrieval</span> of <span>Ocean</span> <span>Colour</span> <span>Products</span> in <span>Normal</span> and <span>Extreme</span> <span>Optically</span> <span>Complex</span> <span>Waters</span>.”</span> In <em>Living <span>Planet</span> <span>Symposium</span></em>. <span>ESA</span> <span>Special</span> <span>Publication</span>.
+</div>
+<div id="ref-caballero_new_2020" class="csl-entry" role="doc-biblioentry">
+Caballero, Isabel, Raúl Fernández, Oscar Moreno Escalante, Luz Mamán, and Gabriel Navarro. 2020. <span>“New Capabilities of <span>Sentinel</span>-<span>2a</span>/<span>B</span> Satellites Combined with in Situ Data for Monitoring Small Harmful Algal Blooms in Complex Coastal Waters.”</span> <em>Scientific Reports</em> 10 (1): 8743. <a href="https://doi.org/10.1038/s41598-020-65600-1">https://doi.org/10.1038/s41598-020-65600-1</a>.
+</div>
+<div id="ref-github" class="csl-entry" role="doc-biblioentry">
+Dubrovin, Ivan. 2021. <span>“Auxiliaries for <em><span>Dubrovin</span> and <span>Ivanov</span> (2022)</em>.”</span> <a href="https://github.com/iod-ine/igarss2022_kamchatka_hab" class="uri">https://github.com/iod-ine/igarss2022_kamchatka_hab</a>.
+</div>
+<div id="ref-slstr" class="csl-entry" role="doc-biblioentry">
+EUMETSAT. 2018. <span>“<span>Sentinel-3</span> <span>SLSTR</span> <span>Marine</span> <span>User</span> <span>Handbook</span>.”</span>
+</div>
+<div id="ref-olci" class="csl-entry" role="doc-biblioentry">
+———. 2021. <span>“<span>Sentinel-3</span> <span>OLCI</span> <span>Marine</span> <span>User</span> <span>Handbook</span>.”</span>
+</div>
+<div id="ref-german_detection_2017" class="csl-entry" role="doc-biblioentry">
+German, Alba, Carolina Tauro, Marcelo C. Scavuzzo, and Anabella Ferral. 2017. <span>“Detection of Algal Blooms in a Eutrophic Reservoir Based on Chlorophyll-a Time Series Data from <span>MODIS</span>.”</span> In <em><span>IGARSS</span> 2017</em>, 4008–11. Fort Worth, TX: IEEE. <a href="https://doi.org/10.1109/IGARSS.2017.8127879">https://doi.org/10.1109/IGARSS.2017.8127879</a>.
+</div>
+<div id="ref-richardson_harmful_1997" class="csl-entry" role="doc-biblioentry">
+Richardson, K. 1997. <span>“Harmful or <span>Exceptional</span> <span>Phytoplankton</span> <span>Blooms</span> in the <span>Marine</span> <span>Ecosystem</span>.”</span> In <em>Advances in <span>Marine</span> <span>Biology</span></em>, 31:301–85. Elsevier. <a href="https://doi.org/10.1016/S0065-2881(08)60225-4">https://doi.org/10.1016/S0065-2881(08)60225-4</a>.
+</div>
+<div id="ref-vinnikov_ecological_2020" class="csl-entry" role="doc-biblioentry">
+Vinnikov, Kirill. 2020. <span>“Ecological Situation in <span>Kamchatka</span>: Conducted Research and Conclusions of <span>FEFU</span> Researchers.”</span> <a href="https://youtu.be/_uNjZf24iEw" class="uri">https://youtu.be/_uNjZf24iEw</a>.
+</div>
+<div id="ref-wang_satellite-derived_2021" class="csl-entry" role="doc-biblioentry">
+Wang, Menghua, Lide Jiang, Karlis Mikelsons, and Xiaoming Liu. 2021. <span>“Satellite-Derived Global Chlorophyll-a Anomaly Products.”</span> <em>International Journal of Applied Earth Observation and Geoinformation</em> 97 (May): 102288. <a href="https://doi.org/10.1016/j.jag.2020.102288">https://doi.org/10.1016/j.jag.2020.102288</a>.
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><div>© 2022 IEEE. Personal use of this material is permitted. Permission from IEEE must be
+obtained for all other uses, in any current or future media, including
+reprinting/republishing this material for advertising or promotional purposes, creating new
+collective works, for resale or redistribution to servers or lists, or reuse of any copyrighted
+component of this work in other works."
+</div></div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
