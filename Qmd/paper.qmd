@@ -24,6 +24,12 @@ abstract: |
   There was also a notable increase in sea surface temperature compared to earlier years.
   Both of these effects are indirect evidence for the presence of an algal bloom.
   Without any \textit{in situ} measurements, our results do not constitute an irrefutable case by themselves, but in conjunction with extensive on-site investigation reports, leave a harmful algal bloom as the only plausible explanation.
+license: |
+  © 2022 IEEE. Personal use of this material is permitted. Permission from IEEE must be
+  obtained for all other uses, in any current or future media, including
+  reprinting/republishing this material for advertising or promotional purposes, creating new
+  collective works, for resale or redistribution to servers or lists, or reuse of any copyrighted
+  component of this work in other works."
 ---
 
 \begin{keywords}
