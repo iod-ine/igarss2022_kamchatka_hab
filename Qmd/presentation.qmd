@@ -7,6 +7,7 @@ format:
   revealjs:
     logo: Skoltech_Logo_Black.png
     theme: [simple, theme.scss]
+    fig-dpi: 300
 ---
 
 ```{r}
@@ -14,6 +15,7 @@ format:
 #| label: setup
 knitr::opts_knit$set(root.dir = here::here())
 library(targets)
+library(tmap)
 ```
 
 ## Two parts of the presentation
@@ -87,6 +89,31 @@ We wanted to see if remote sensing data aligns with this hypothesis.
 :::
 
 ## Region of interest
+
+```{r}
+#| label: roi-map
+roi_map <- tar_read(roi_map)
+
+ivp <- grid::viewport(
+  x = 0.54, y = 0.072,
+  width = 0.3, height = 0.3,
+  just = c("left", "bottom"),
+)
+
+print(roi_map$main)
+print(roi_map$inset, vp = ivp)
+```
+
+::: footer
+Southeast coast of Kamchatka peninsula.
+:::
+
+::: {.notes}
+This is the map of the region of interest.
+It's the southeast part of the Kamchatka peninsula.
+The red dot marks the beach where surfers reported poisoning symptoms.
+Along the coast of Avacha bay, many dead marine animals were washed onto the shore.
+:::
 
 ## Data
 
