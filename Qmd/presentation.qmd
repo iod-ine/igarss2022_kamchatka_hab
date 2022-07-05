@@ -184,11 +184,43 @@ By September 29th, when the die-offs of marine animals were discovered, the bloo
 
 # Part 2: The approach
 
+::: {.notes}
+Now to what, I think, is a more interesting part of the presentation: the approach.
+:::
+
 ## Literate programming
 
-Literate programming is a programming paradigm introduced by Donald Knuth in which a computer program is given an explanation of its logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which compilable source code can be generated.
+:::: {.columns}
+::: {.column width="50%"}
+**Literate programming** is a paradigm in which natural language is mixed with snippets of code.
 
-Any change is automatically included into the output: no copy-pasting of images, no chance to forget to update the final result.
+::: {.incremental}
+* The results of code are rendered into the output document
+* No copy-pasting of images, no chance to forget to update the report
+* Every document comes with code that produced it
+:::
+
+:::
+::: {.column width="50%"}
+![](source_code_screenshot.png)
+:::
+::::
+
+::: {.notes}
+Literate programming has been gaining traction recently.
+It is a paradigm in which natural language is mixed with snippets of code.
+It allows for generation of transparent and reproducible reports, papers, presentations and so on.
+The screenshot on the right is a part of the source code of our paper.
+You can see the text and the code to generate a map in the same document. <NEXT>
+Compiling it will run the code and automatically generate an output of almost any format you can possibly need.
+The paper, for example, is rendered to a LaTeX source document that is then compiled to a PDF.
+This presentation is rendered to HTML and can be opened in any modern browser. <NEXT>
+This removes the need to manually keep track of any computational output in the resulting documents.
+If code changes, everything depending on it is updated right away. <NEXT>
+And every document comes with the source code that produced it.
+For example, if you liked any of the maps in the paper, you can open the repository and look at the code that generated it.
+You don't need to manually implement the methods from their description because they come with the paper itself.
+:::
 
 ## Constituents
 
