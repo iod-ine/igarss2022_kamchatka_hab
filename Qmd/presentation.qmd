@@ -147,7 +147,7 @@ $$
 
 . . .
 
-Visual analysis of the time-series of relative chl anomalies.
+Visual analysis of the time-series of relative chl anomalies to trace the evolution of a suspected bloom in time.
 
 ::: {.notes}
 To assess the presence of an algal bloom, we used relative chlorophyll anomaly maps to put observed concentrations into the context of average concentration over the recent past.
@@ -180,6 +180,7 @@ The situation becomes more stable only by the end of October, and by the beginni
 The timeline suggested by these results is consistent with the timeline of the events.
 The first poisoning symptoms were reported as early as September 9th.
 By September 29th, when the die-offs of marine animals were discovered, the bloom was in full force for a long time.
+In the paper, we also show sea surface temperature maps, that show a change in temperatures that potentially could have triggered a bloom.
 :::
 
 # Part 2: The approach
