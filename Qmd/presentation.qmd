@@ -253,12 +253,23 @@ I invite you to take a look at the repository.
 ## Target network
 
 ```{r}
-#| echo: false
-tar_visnetwork(targets_only = TRUE)
+#| label: network
+#| out-width: 960px
+#| out-height: 480px
+tar_visnetwork(targets_only = TRUE, label = "time")
 ```
 
 ::: footer
 How to automate the data retrieval?
+:::
+
+::: {.notes}
+To chain all the processing steps together, we used an R package called "targets".
+This slide shows the network of processing steps, annotated with the time it took to run.
+All the heavy lifting of processing the imagery is done by SNAP.
+The only not automated step right now is the retrieval of long-term archive Sentinel-3 ocean data.
+As I said in the beginning, the EUMETSAT team is working on a solution that will have an API, so the full lifecycle of studies like ours can be automated.
+And imagine all papers come in that format, where you can recreate, reuse and tinker with the code to verify and build on the results.
 :::
 
 ## How to recreate the results
