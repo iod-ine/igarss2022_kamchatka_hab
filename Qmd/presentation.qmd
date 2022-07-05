@@ -117,6 +117,25 @@ Along the coast of Avacha bay, many dead marine animals were washed onto the sho
 
 ## Data
 
+The primary data source was the **Sentinel-3** mission. 
+
+* OLCI^[Ocean and Land Color Instrument] chl concentrations [300 m, 1.9 days]
+* SLSTR^[Sea and Land Surface Temperature Radiometer] sea surface temperature
+
+. . . 
+
+Where available, **Sentinel-2** MSI^[Multispectral instrument] data [10 m].
+Processed using C2RCC^[Case 2 Regional Coast Color] in SNAP to extract chl concentrations. 
+
+::: {.notes}
+The primary data source for our analysis was the Sentinel-3 mission.
+We worked with a time series of chlorophyll concentrations from 76 level 2 OLCI products covering June to November.
+We also looked at sea surface temperatures from SLSTR products covering August to October 2017-2020 to check if there was a temperature anomaly compared to the previous years. <NEXT>
+Where possible, we additionally looked at Sentinel-2 images, which offer much more detailed data with a spatial resolution of 10 meters, but a longer revisit period compared to Sentinel-3, making it much harder to find suitable images.
+The total of 13 products were not covered by clouds, and we processed them with C2RCC to extract chlorophyll concentrations and produce atmospherically corrected true color images.
+This is the same algorithm used in Sentinel-3.
+:::
+
 ## Methods
 
 $$
