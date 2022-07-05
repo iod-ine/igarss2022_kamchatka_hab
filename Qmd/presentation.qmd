@@ -158,6 +158,30 @@ Then we visually analyzed the time-series of relative anomaly maps to see if the
 
 ## Chlorophyll anomaly evolution
 
+```{r}
+#| label: ranomaly-maps
+image_ <- png::readPNG(here::here("Maps", "_ranomaly_maps.png"))
+grid::grid.raster(image_)
+```
+
+::: footer
+The evolution of the concentration anomaly does not contradict the timeline of the events.
+:::
+
+::: {.notes}
+This is a representative subset of the anomaly map time-series.
+Please ignore the pixelated high-value regions far away from the coast, they correspond to noisy predictions at the edges of clouds.
+It starts in August, well before anything out of the ordinary was reported.
+The coastal area has no deviation from the median.
+The situation changes in the middle of September, where even though the values of relative anomalies are not large, over-concentration is noticeable along the whole coast.
+The relative anomaly intensifies towards the end of September and the beginning of October.
+Concentrations are significantly larger than the reference, and they stay at this level until the middle of October.
+The situation becomes more stable only by the end of October, and by the beginning of November, there are again almost no deviations from the new reference, making the situation stable once again.
+The timeline suggested by these results is consistent with the timeline of the events.
+The first poisoning symptoms were reported as early as September 9th.
+By September 29th, when the die-offs of marine animals were discovered, the bloom was in full force for a long time.
+:::
+
 # Part 2: The approach
 
 ## Literate programming
