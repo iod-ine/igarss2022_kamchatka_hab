@@ -309,3 +309,38 @@ The only assumption here is that you somehow managed to get the same Sentinel-3 
 ::: footer
 Assuming you got the archived Sentinel-3 data.
 :::
+
+## Conclusions
+
+Two parts of the presentation, two sets of conclusions.
+
+:::: {.columns}
+::: {.column width="50%"}
+### The study
+* Supports the HAB^[Harmful Algal Bloom] hypothesis
+* Explains the timeline
+* No *in situ* data
+:::
+::: {.column width="50%"}
+### The approach
+* Valid for studies like this
+* Open, easy to use and well-documented tools
+* We should strive for more reproducibility
+:::
+::::
+
+::: {.notes}
+To conclude the study part of the presentation, we aimed to establish whether remote sensing aligns with the harmful algal bloom explanation of the ecological situation in Kamchatka.
+The results are indeed consistent with the presence of a bloom of algae, and the timelines are aligned.
+Since we don't have any in situ data, we can't actually be 100% sure.
+But combined with the reports of the Far Eastern Federal University, a bloom is the only plausible explanation.
+In terms of the approach, the conclusion is that it is very much possible to conduct studies like these in the reproducible research framework.
+There is a lot of open-source, free, easy to use and well-documented related tools.
+The world where most of the published studies are completely reproducible is a good place.
+:::
+
+## Thank you!
+
+::: {.notes}
+Thank you very much for your attention, and I will be happy to answer any questions you might have.
+:::
