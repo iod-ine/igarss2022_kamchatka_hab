@@ -274,23 +274,37 @@ And imagine all papers come in that format, where you can recreate, reuse and ti
 
 ## How to recreate the results
 
-Run the pipeline.
+. . .
+
+Run the pipeline:
 
 ```r
 targets::tar_make()
 ```
 
-Compile the paper pdf.
+. . .
+
+Compile the paper pdf:
 
 ```r
-knitr::knit()
+knitr::knit("Rnw/index.RRnw")
 ```
 
-Generate the presentation html.
+Generate the presentation html:
 
 ```shell
-quarto render
+quarto render Qmd/presentation.qmd
 ```
+
+::: {.notes}
+If you were interested in recreating our results, everything comes down to three steps. <NEXT>
+The first is to actually run the processing pipeline.
+This will execute the graph from the previous slide and start tracking which tasks have been updated and need to be rerun in case you decide to change something in the code. <NEXT>
+And to generate the paper PDF or the presentation HTML, you run a respective command either in R console or in the terminal.
+All steps can, if needed, be reduced to one step by adding the compilation of output as the last step of the processing pipeline.
+We just chose to separate them.
+The only assumption here is that you somehow managed to get the same Sentinel-3 ocean long-term archive data and placed it in the project folder.
+:::
 
 ::: footer
 Assuming you got the archived Sentinel-3 data.
