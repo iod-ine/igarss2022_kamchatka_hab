@@ -1,4 +1,5 @@
-Rendered paper |
+[Rendered paper](https://iod-ine.github.io/igarss2022_kamchatka_hab/paper.html)
+|
 [Rendered presentation](https://iod-ine.github.io/igarss2022_kamchatka_hab/presentation.html)
 
 ---
