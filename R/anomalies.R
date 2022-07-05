@@ -90,7 +90,8 @@ generate_chl_anomaly_time_series <- function(files, kamchatka_shp) {
     # The rasters will be useful later for final map generation
     writeRaster(
       relative_anomaly,
-      here::here("Data", "anomaly", paste0("ranomaly_", basename(file)))
+      here::here("Data", "anomaly", paste0("ranomaly_", basename(file))),
+      overwrite = TRUE
     )
 
     # To select representative dates, save all maps (with different zoom levels)

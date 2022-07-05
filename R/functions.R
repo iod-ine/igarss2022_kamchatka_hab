@@ -58,7 +58,7 @@ extract_olci_chlorophyll <- function(...) {
 
   output_dir <- here::here("Data", "export")
   source_python(here::here("Python", "extract_olci_chlorophyll.py"))
-  list.files(output_dir, full.names = TRUE, pattern = "S3_.*\\.tif$")
+  list.files(output_dir, full.names = TRUE, pattern = "S3_.*_chl\\.tif$")
 }
 
 extract_slstr_sst <- function(...) {
