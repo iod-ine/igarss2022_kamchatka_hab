@@ -224,24 +224,31 @@ You don't need to manually implement the methods from their description because 
 
 ## Constituents
 
-* R Markdown
-* Quarto
-* Python
-* R
+All the components all open source and free.
 
-## Python and R
+::: {.incremental}
+* R and Python
+* ESA GPT^[Graph Processing Tool] SNAP
+* R Markdown and Quarto
+* Git and GitHub
+:::
 
-Very easy to use together
+. . .
 
-### Python
-- Wrapper around SNAP GPT
-- `lxml`
+[github.com/iod-ine/igarss2022_kamchatka_hab](https://github.com/iod-ine/igarss2022_kamchatka_hab)
 
-### R
-- Processing and visualization of spatial outputs
-- `sf`, `terra`, `tmap`, `targets`, `knitr`
-
-## R Markdown and Quarto
+::: {.notes}
+The components required to recreate our results or to create new results like ours are all open source and free. <NEXT>
+We used a combination of Python and R scripts to automate the processing and generate all maps.
+You don't have to use both at the same time, you can use one language you are more comfortable with. <NEXT>
+To process the Sentinel imagery, we used SNAP.
+More specifically, we added a Python wrapper around SNAP graph processing tool to run the computations on a headless workstation using a simple Python script. <NEXT>
+And to generate the output, we used R Markdown and its more recent successor, Quarto.
+These are literate programming frameworks. <NEXT>
+To version control and openly host the code, we used Git and GitHub.
+It's even possible to host the web versions of the papers and presentations directly from GitHub for free. <NEXT>
+I invite you to take a look at the repository.
+:::
 
 ## Target network
 
