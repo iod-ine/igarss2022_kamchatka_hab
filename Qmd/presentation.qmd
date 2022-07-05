@@ -61,7 +61,30 @@ And, of course, all our code is open and available on GitHub.
 
 ## Background
 
-What happened
+At the end of September of 2020 media widely reported an environmental disaster on the eastern coast of Kamchatka.
+
+::: {.incremental}
+* Massive die-off of marine life
+* Poisoning symptoms in surfers
+* Discoloration and foam formation
+* Several expeditions on site
+:::
+
+. . .
+
+All of theses can be explained by a *bloom of toxic algae*.
+Can we additionally support that hypothesis with remote sensing data?
+
+::: {.notes}
+At the end of September -- beginning of October 2020, an environmental disaster was widely reported on the eastern coast of Kamchatka. <NEXT>
+A storm washed many dead marine animals to the shore, which initiated an outcry over the media. <NEXT>
+Reports of poisoning symptoms, skin and eye irritation from surfers in the area surfaced and added fuel to the growing public belief in some unspecified anthropogenic pollution. <NEXT> 
+Photos of discolored water and foam along the coast circulated in social media. <NEXT>
+Several expeditions were sent to the site to investigate, the most notable being the group of researchers from the Far Eastern Federal University.
+They considered multiple possible explanations of the events, both technogenic and natural, and ultimately concluded that the most likely explanation <NEXT> is the bloom of toxic algae.
+A harmful algal bloom would explain all observations.
+We wanted to see if remote sensing data aligns with this hypothesis.
+:::
 
 ## Region of interest
 
