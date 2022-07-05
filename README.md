@@ -1,3 +1,8 @@
+Rendered paper |
+[Rendered presentation](https://iod-ine.github.io/igarss2022_kamchatka_hab/presentation.html)
+
+---
+
 # Auxiliaries for *Dubrovin and Ivanov (2022)*
 
 The whole workflow is contained within a [`targets`](https://github.com/ropensci/targets) pipeline.
@@ -31,4 +36,3 @@ The EUMETSAT team is working on better alternatives, but at the moment, it's the
 
 I would put the data on public file sharing, but it's too big for any free service.
 I will be keeping a copy of all products for some time, so if you need the data, you can suggest a way to share it here in the discussions or by reaching me at Ivan.Dubrovin@skoltech.ru.
-
