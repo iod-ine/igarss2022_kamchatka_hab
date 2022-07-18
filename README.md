@@ -16,24 +16,13 @@
 
 ## Dependencies
 
+The dependencies are contained within virtual environments: renv for R and Pipenv for Python.
+
+## About
+
 The whole workflow is contained within a [`targets`](https://github.com/ropensci/targets) pipeline.
 
-### R
-- [`targets`](https://docs.ropensci.org/targets/) – used to structure a project into a pipeline.
-- [`knitr`](https://yihui.org/knitr/) – used to compile the pdf of the article.
-- [`tidyverse`](https://www.tidyverse.org/) – used to manipulate tabular data.
-- [`sf`](https://r-spatial.github.io/sf/) – used for working with vector data.
-- [`terra`](https://rspatial.github.io/terra/reference/terra-package.html) – used for working with raster data.
-- [`tmap`](https://r-tmap.github.io/tmap/) – used for generating maps.
-- [`reticulate`](https://rstudio.github.io/reticulate/) – used for calling Python code from R.
-- [`geodata`](https://github.com/rspatial/geodata/) – used to fetch boundaries of Kamchatka.
-- [`here`](https://here.r-lib.org/) – used to not think about file paths.
-- [`git2r`](https://docs.ropensci.org/git2r/) – used to setup `snapista` from a GitHub repository.
-
-### Python
-- [`lxml`](https://pypi.org/project/lxml/) – used by `snapista` for generating XML graphs for SNAP GPT.
-
-## Not automated: data retrival
+## Not automated: data retrieval
 
 I don't know how to include data retrieval into the pipeline.
 I include the lists of used products in the folders that are supposed to contain them.
