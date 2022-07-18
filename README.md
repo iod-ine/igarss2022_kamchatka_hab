@@ -6,9 +6,17 @@
 
 # Auxiliaries for *Dubrovin and Ivanov (2022)*
 
-The whole workflow is contained within a [`targets`](https://github.com/ropensci/targets) pipeline.
+## Repository structure
+
+- `Data/`: lists of used products for raw and simple READMEs that preserve the directory structure for generated data.
+- `Python/`: Python scripts that wrap [SNAP](https://earth.esa.int/eogateway/tools/snap) GPT to process Sentinel images.
+- `Qmd/`: Quarto source for the paper and the presentation + auxillary files.
+- `R/`: R scripts that define functions used in the pipeline.
+- `_targets.R`: the pipeline definition.
 
 ## Dependencies
+
+The whole workflow is contained within a [`targets`](https://github.com/ropensci/targets) pipeline.
 
 ### R
 - [`targets`](https://docs.ropensci.org/targets/) – used to structure a project into a pipeline.
