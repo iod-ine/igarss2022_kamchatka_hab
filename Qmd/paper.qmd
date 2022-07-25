@@ -25,11 +25,13 @@ abstract: |
   Both of these effects are indirect evidence for the presence of an algal bloom.
   Without any in situ measurements, our results do not constitute an irrefutable case by themselves, but in conjunction with extensive on-site investigation reports, leave a harmful algal bloom as the only plausible explanation.
 license: |
-  © 2022 IEEE. Personal use of this material is permitted. Permission from IEEE must be
-  obtained for all other uses, in any current or future media, including
-  reprinting/republishing this material for advertising or promotional purposes, creating new
-  collective works, for resale or redistribution to servers or lists, or reuse of any copyrighted
-  component of this work in other works."
+  Copyright 2022 IEEE.
+  Published in the IEEE 2022 International Geoscience & Remote Sensing Symposium (IGARSS 2022), scheduled for 17 - 22 July 2022 in Kuala Lumpur, Malaysia.
+  Personal use of this material is permitted.
+  However, permission to reprint/republish this material for advertising or promotional purposes or for creating new collective works for resale or redistribution to servers or lists, or to reuse any copyrighted component of this work in other works, must be obtained from the IEEE.
+  Contact: Manager, Copyrights and Permissions / IEEE Service Center / 445 Hoes Lane / P.O. Box 1331 / Piscataway, NJ 08855-1331, USA.
+  Telephone: + Intl. 908-562-3966.
+
 ---
 
 \begin{keywords}
