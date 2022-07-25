@@ -23,7 +23,7 @@ abstract: |
   Significant chlorophyll concentration anomaly values were observed during September and October of 2020.
   There was also a notable increase in sea surface temperature compared to earlier years.
   Both of these effects are indirect evidence for the presence of an algal bloom.
-  Without any \textit{in situ} measurements, our results do not constitute an irrefutable case by themselves, but in conjunction with extensive on-site investigation reports, leave a harmful algal bloom as the only plausible explanation.
+  Without any in situ measurements, our results do not constitute an irrefutable case by themselves, but in conjunction with extensive on-site investigation reports, leave a harmful algal bloom as the only plausible explanation.
 license: |
   © 2022 IEEE. Personal use of this material is permitted. Permission from IEEE must be
   obtained for all other uses, in any current or future media, including
