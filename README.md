@@ -6,6 +6,21 @@
 
 # Auxiliaries for *Dubrovin and Ivanov (2022)*
 
+```
+@inproceedings{dubrovinRemoteSensingEvidence2022,
+  title = {Remote {{Sensing Evidence}} for the {{Harmful Algal Bloom Explanation}} of the {{Ecological Situation}} in {{Kamchatka}} in {{Autumn}} of 2020},
+  booktitle = {{{IGARSS}} 2022 - 2022 {{IEEE International Geoscience}} and {{Remote Sensing Symposium}}},
+  author = {Dubrovin, Ivan and Ivanov, Anton},
+  date = {2022-07-17},
+  pages = {6764--6767},
+  publisher = {{IEEE}},
+  location = {{Kuala Lumpur, Malaysia}},
+  doi = {10.1109/IGARSS46834.2022.9884841},
+  eventtitle = {{{IGARSS}} 2022 - 2022 {{IEEE International Geoscience}} and {{Remote Sensing Symposium}}},
+  isbn = {978-1-66542-792-0}
+}
+```
+
 ## Repository structure
 
 - `Data/`: lists of used products for raw and simple READMEs that preserve the directory structure for generated data.
